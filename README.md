@@ -2,7 +2,7 @@
 
 # Elements
 - [x] ~~Text Box~~
-- [ ] Check Box
+- [x] ~~Check Box~~
 - [ ] Radio Button
 - [ ] Web Tables
 - [ ] Buttons
