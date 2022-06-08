@@ -55,4 +55,4 @@ class BasePage:
         return [element for element in elements if element.text.lower() == name][0]
 
     def go_to_element(self, element):
-        self.driver.execute_script("argument[0].scrollIntoView();", element)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)

@@ -9,3 +9,11 @@ class TextBoxPageLocators:
     CREATED_EMAIL = "#output #email"
     CREATED_CURRENT_ADDRESS = "#output #currentAddress"
     CREATED_PERMANENT_ADDRESS = "#output #permanentAddress"
+
+
+class CheckBoxPageLocators:
+    EXPAND_ALL_BUTTON = "button[title='Expand all']"
+    ITEM_LIST = "span[class='rct-title']"
+    CHECKED_ITEMS = "svg[class='rct-icon rct-icon-check']"
+    TITLE_ITEM = ".//ancestor::span[@class='rct-text']"
+    OUTPUT_RESULT = "span[class='text-success']"
