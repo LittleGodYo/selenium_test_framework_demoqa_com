@@ -1,7 +1,7 @@
 # selenium_test_framework demoqa.com
 
 # Elements
-- [x] Text Box
+- [x] ~~Text Box~~
 - [ ] Check Box
 - [ ] Radio Button
 - [ ] Web Tables
