@@ -17,3 +17,10 @@ class CheckBoxPageLocators:
     CHECKED_ITEMS = "svg[class='rct-icon rct-icon-check']"
     TITLE_ITEM = ".//ancestor::span[@class='rct-text']"
     OUTPUT_RESULT = "span[class='text-success']"
+
+
+class RadioButtonPageLocators:
+    YES_RADIOBUTTON = "div label[for='yesRadio']"
+    IMPRESSIVE_RADIOBUTTON = "div label[for='impressiveRadio']"
+    NO_RADIOBUTTON = "div label[for='noRadio']"
+    OUTPUT_RESULT = "span[class=text-success]"
