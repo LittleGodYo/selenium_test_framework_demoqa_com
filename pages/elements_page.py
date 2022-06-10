@@ -2,7 +2,8 @@ import random
 
 from generator.generator import generated_person
 from pages.base_page import BasePage
-from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, RadioButtonPageLocators
+from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, RadioButtonPageLocators, \
+    WebTablePageLocators
 
 
 class TextBoxPage(BasePage):
@@ -74,3 +75,42 @@ class RadioButtonPage(BasePage):
 
     def get_output_result(self):
         return self.is_present('css', self.locators.OUTPUT_RESULT).text
+
+class WebTablePage(BasePage):
+    locators = WebTablePageLocators()
+
+    def add_new_person(self):
+        count = random.randint(1, 5)
+        while count != 0:
+            person_info = next(generated_person())
+            first_name = person_info.first_name
+            last_name = person_info.last_name
+            email = person_info.email
+            age = person_info.age
+            salary = person_info.salary
+            department = person_info.department
+            self.is_visible('css', self.locators.BUTTON_ADD).click()
+            self.is_visible('css', self.locators.INPUT_FIRST_NAME).send_keys(first_name)
+            self.is_visible('css', self.locators.INPUT_LAST_NAME).send_keys(last_name)
+            self.is_visible('css', self.locators.INPUT_EMAIL).send_keys(email)
+            self.is_visible('css', self.locators.INPUT_AGE).send_keys(age)
+            self.is_visible('css', self.locators.INPUT_SALARY).send_keys(salary)
+            self.is_visible('css', self.locators.INPUT_DEPARTMENT).send_keys(department)
+            self.is_visible('css', self.locators.BUTTON_SUBMIT).click()
+            count -= 1
+        return [first_name, last_name, str(age), email, str(salary), department]
+
+    def check_added_person(self):
+        people_list = self.are_present('css', self.locators.FULL_PEOPLE_LIST)
+        data = []
+        for item in people_list:
+            data.append(item.text.splitlines())
+        return data
+
+    def search_some_person(self, key_word):
+        self.is_visible("css", self.locators.INPUT_SEARCH).send_keys(key_word)
+
+    def check_search_person(self):
+        delete_button = self.is_visible('css', self.locators.BUTTON_DELETE)
+        row = delete_button.find_element_by_xpath(self.locators.ROW_PARENT)
+        return row.text.splitlines()
