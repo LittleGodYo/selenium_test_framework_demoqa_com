@@ -3,7 +3,7 @@
 # Elements
 - [x] ~~Text Box~~
 - [x] ~~Check Box~~
-- [ ] Radio Button
+- [x] ~~Radio Button~~
 - [ ] Web Tables
 - [ ] Buttons
 - [ ] Links
