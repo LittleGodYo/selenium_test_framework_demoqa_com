@@ -40,4 +40,9 @@ class WebTablePageLocators:
     INPUT_SEARCH = "input[id='searchBox']"
     BUTTON_DELETE = "span[title='Delete']"
     ROW_PARENT = ".//ancestor::div[@class='rt-tr-group']"
+    NO_ROWS_FOUND = "div[class='rt-noData']"
+    COUNT_ROWS_LIST = "select[aria-label='rows per page']"
+
+    BUTTON_UPDATE = "span[title='Edit']"
+
 
