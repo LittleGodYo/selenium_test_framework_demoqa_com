@@ -47,7 +47,6 @@ class WebTablePageLocators:
 
 
 class ButtonsPageLocators:
-
     BUTTON_DOUBLE_CLICK = "button[id='doubleClickBtn']"
     BUTTON_RIGHT_CLICK = "button[id='rightClickBtn']"
     BUTTON_CLICK_ME = "//div[3]/button"
@@ -55,3 +54,8 @@ class ButtonsPageLocators:
     SUCCESS_DOUBLE = "p[id='doubleClickMessage']"
     SUCCESS_RIGHT = "p[id='rightClickMessage']"
     SUCCESS_CLICK_ME = "p[id='dynamicClickMessage']"
+
+
+class LinksPageLocators:
+    SIMPLE_LINK = "a[id='simpleLink']"
+    BAD_REQUEST = "a[id='bad-request']"
