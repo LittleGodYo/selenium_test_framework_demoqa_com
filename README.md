@@ -6,7 +6,7 @@
 - [x] ~~Radio Button~~
 - [x] ~~Web Tables~~
 - [x] ~~Buttons~~
-- [ ] Links
+- [x] ~~Links~~
 - [ ] Broken Links - Images
 - [ ] Upload and Download
 - [ ] Dynamic Properties
