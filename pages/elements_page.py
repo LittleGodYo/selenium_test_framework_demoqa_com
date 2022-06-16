@@ -1,12 +1,14 @@
+import base64
+import os
 import random
 
 import requests
 from selenium.webdriver.common.by import By
 
-from generator.generator import generated_person
+from generator.generator import generated_person, generated_file
 from pages.base_page import BasePage
 from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, RadioButtonPageLocators, \
-    WebTablePageLocators, ButtonsPageLocators, LinksPageLocators
+    WebTablePageLocators, ButtonsPageLocators, LinksPageLocators, UploadAndDownloadPageLocators
 
 
 class TextBoxPage(BasePage):
@@ -189,3 +191,27 @@ class LinksPage(BasePage):
             self.is_present('css', self.locators.BAD_REQUEST).click()
         else:
             return request.status_code
+
+
+class UploadAndDownloadPage(BasePage):
+    locators = UploadAndDownloadPageLocators()
+
+    def upload_file(self):
+        file_name, path = generated_file()
+        self.is_present('css', self.locators.UPLOAD_FILE).send_keys(path)
+        os.remove(path)
+        text = self.is_visible('css', self.locators.UPLOADED_FILE).text
+        return file_name.split('\\')[-1], text.split('\\')[-1]
+
+    def download_file(self):
+        link = self.is_present('css', self.locators.DOWNLOAD_FILE).get_attribute('href')
+        link_b = base64.b64decode(link)
+        path_name_file = rf'D:\down\{random.randint(0, 999)}.jpg'
+        with open(path_name_file, 'wb+') as f:
+            offset = link_b.find(b'\xff\xd8')
+            f.write(link_b[offset:])
+            check_file = os.path.exists(path_name_file)
+            f.close()
+        os.remove(path_name_file)
+        return check_file
+

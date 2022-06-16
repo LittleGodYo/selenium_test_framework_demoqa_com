@@ -59,3 +59,10 @@ class ButtonsPageLocators:
 class LinksPageLocators:
     SIMPLE_LINK = "a[id='simpleLink']"
     BAD_REQUEST = "a[id='bad-request']"
+
+
+class UploadAndDownloadPageLocators:
+    UPLOAD_FILE = "input[id='uploadFile']"
+    UPLOADED_FILE = "p[id='uploadedFilePath']"
+
+    DOWNLOAD_FILE = "a[id='downloadButton']"
