@@ -5,7 +5,7 @@
 - [x] ~~Check Box~~
 - [x] ~~Radio Button~~
 - [x] ~~Web Tables~~
-- [ ] Buttons
+- [x] ~~Buttons~~
 - [ ] Links
 - [ ] Broken Links - Images
 - [ ] Upload and Download
