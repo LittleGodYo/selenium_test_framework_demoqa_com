@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from generator.generator import generated_person
 from pages.base_page import BasePage
 from locators.elements_page_locators import TextBoxPageLocators, CheckBoxPageLocators, RadioButtonPageLocators, \
-    WebTablePageLocators
+    WebTablePageLocators, ButtonsPageLocators
 
 
 class TextBoxPage(BasePage):
@@ -71,12 +71,13 @@ class RadioButtonPage(BasePage):
 
     def click_on_radio_button(self, choice):
         choices = {'yes': self.locators.YES_RADIOBUTTON,
-                  'impressive': self.locators.IMPRESSIVE_RADIOBUTTON,
-                  'no': self.locators.NO_RADIOBUTTON}
+                   'impressive': self.locators.IMPRESSIVE_RADIOBUTTON,
+                   'no': self.locators.NO_RADIOBUTTON}
         self.is_visible('css', choices[choice]).click()
 
     def get_output_result(self):
         return self.is_present('css', self.locators.OUTPUT_RESULT).text
+
 
 class WebTablePage(BasePage):
     locators = WebTablePageLocators()
@@ -144,6 +145,23 @@ class WebTablePage(BasePage):
         return data
 
     def check_count_rows(self):
-        list_rows = self.are_present(self.locators.FULL_PEOPLE_LIST)
+        list_rows = self.are_present('css', self.locators.FULL_PEOPLE_LIST)
         return len(list_rows)
 
+
+class ButtonsPage(BasePage):
+    locators = ButtonsPageLocators()
+
+    def click_on_different_button(self, type_click):
+        if type_click == "double":
+            self.action_double_click(self.is_visible('css', self.locators.BUTTON_DOUBLE_CLICK))
+            return self.check_clicked_on_the_button(self.locators.SUCCESS_DOUBLE)
+        if type_click == "right":
+            self.action_right_click(self.is_visible('css', self.locators.BUTTON_RIGHT_CLICK))
+            return self.check_clicked_on_the_button(self.locators.SUCCESS_RIGHT)
+        if type_click == "click":
+            self.is_visible('xpath', self.locators.BUTTON_CLICK_ME).click()
+            return self.check_clicked_on_the_button(self.locators.SUCCESS_CLICK_ME)
+
+    def check_clicked_on_the_button(self, element):
+        return self.is_present('css', element).text

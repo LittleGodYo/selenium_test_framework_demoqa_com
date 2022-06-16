@@ -46,3 +46,12 @@ class WebTablePageLocators:
     BUTTON_UPDATE = "span[title='Edit']"
 
 
+class ButtonsPageLocators:
+
+    BUTTON_DOUBLE_CLICK = "button[id='doubleClickBtn']"
+    BUTTON_RIGHT_CLICK = "button[id='rightClickBtn']"
+    BUTTON_CLICK_ME = "//div[3]/button"
+
+    SUCCESS_DOUBLE = "p[id='doubleClickMessage']"
+    SUCCESS_RIGHT = "p[id='rightClickMessage']"
+    SUCCESS_CLICK_ME = "p[id='dynamicClickMessage']"
