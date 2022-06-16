@@ -4,7 +4,7 @@
 - [x] ~~Text Box~~
 - [x] ~~Check Box~~
 - [x] ~~Radio Button~~
-- [ ] Web Tables
+- [x] ~~Web Tables~~
 - [ ] Buttons
 - [ ] Links
 - [ ] Broken Links - Images
