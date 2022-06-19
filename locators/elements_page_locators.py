@@ -66,3 +66,12 @@ class UploadAndDownloadPageLocators:
     UPLOADED_FILE = "p[id='uploadedFilePath']"
 
     DOWNLOAD_FILE = "a[id='downloadButton']"
+
+
+class DynamicPropertiesPageLocators:
+    BUTTON_COLOR_CHANGE = "button[id='colorChange']"
+    BUTTON_ENABLE_AFTER = "button[id='enableAfter']"
+    BUTTON_VISIBLE_AFTER = "button[id='visibleAfter']"
+
+
+
