@@ -9,7 +9,7 @@
 - [x] ~~Links~~
 - [ ] Broken Links - Images
 - [x] ~~Upload and Download~~
-- [ ] Dynamic Properties
+- [x] ~~Dynamic Properties~~
 # Forms
 - [ ] Practice Form
 # Alerts, Frame & Windows
