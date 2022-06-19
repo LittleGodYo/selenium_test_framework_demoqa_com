@@ -8,7 +8,7 @@
 - [x] ~~Buttons~~
 - [x] ~~Links~~
 - [ ] Broken Links - Images
-- [ ] Upload and Download
+- [x] ~~Upload and Download~~
 - [ ] Dynamic Properties
 # Forms
 - [ ] Practice Form
