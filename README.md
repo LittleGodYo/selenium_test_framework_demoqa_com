@@ -13,7 +13,7 @@
 # Forms
 - [x] ~~Practice Form~~
 # Alerts, Frame & Windows
-- [ ] Browser Windows
+- [x] ~~Browser Windows~~
 - [ ] Alerts
 - [ ] Frames
 - [ ] Nested Frames
