@@ -28,6 +28,7 @@ class BasePage:
         return locating[find_by]
 
     def is_visible(self, find_by: str, locator: str, locator_name: str = None) -> WebElement:
+        self.go_to_element(self.is_present('css', locator))
         return self.__wait.until(ec.visibility_of_element_located((self.__get_selenium_by(find_by), locator)), locator_name)
 
     def is_present(self, find_by: str, locator: str, locator_name: str = None) -> WebElement:
