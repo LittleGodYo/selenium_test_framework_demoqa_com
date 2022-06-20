@@ -11,7 +11,7 @@
 - [x] ~~Upload and Download~~
 - [x] ~~Dynamic Properties~~
 # Forms
-- [ ] Practice Form
+- [x] ~~Practice Form~~
 # Alerts, Frame & Windows
 - [ ] Browser Windows
 - [ ] Alerts
