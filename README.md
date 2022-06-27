@@ -1,6 +1,6 @@
 # selenium_test_framework demoqa.com
 
-# Elements
+## Elements
 - [x] ~~Text Box~~
 - [x] ~~Check Box~~
 - [x] ~~Radio Button~~
@@ -10,15 +10,15 @@
 - [ ] Broken Links - Images
 - [x] ~~Upload and Download~~
 - [x] ~~Dynamic Properties~~
-# Forms
+## Forms
 - [x] ~~Practice Form~~
-# Alerts, Frame & Windows
-- [ ] Browser Windows
+## Alerts, Frame & Windows
+- [x] ~~Browser Windows~~
 - [ ] Alerts
 - [ ] Frames
 - [ ] Nested Frames
 - [ ] Modal Dialogs
-# Widgets
+## Widgets
 - [ ] Accordian
 - [ ] Auto Complete
 - [ ] Date Picker
@@ -28,13 +28,13 @@
 - [ ] Tool Tips
 - [ ] Menu
 - [ ] Select Menu
-# Interactions
+## Interactions
 - [ ] Sortable
 - [ ] Selectable
 - [ ] Resizable
 - [ ] Droppable
 - [ ] Dragabble
-# Book Store Application
+## Book Store Application
 - [ ] Login
 - [ ] Book Store
 - [ ] Profile
