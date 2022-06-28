@@ -20,7 +20,7 @@
 - [x] ~~Modal Dialogs~~
 ## Widgets
 - [x] ~~Accordian~~
-- [ ] Auto Complete
+- [x] ~~Auto Complete~~
 - [ ] Date Picker
 - [ ] Slider
 - [ ] Progress Bar
