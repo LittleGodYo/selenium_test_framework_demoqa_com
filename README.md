@@ -17,7 +17,7 @@
 - [x] ~~Alerts~~
 - [x] ~~Frames~~
 - [x] ~~Nested Frames~~
-- [ ] Modal Dialogs
+- [x] ~~Modal Dialogs~~
 ## Widgets
 - [ ] Accordian
 - [ ] Auto Complete
