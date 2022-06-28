@@ -14,7 +14,7 @@
 - [x] ~~Practice Form~~
 ## Alerts, Frame & Windows
 - [x] ~~Browser Windows~~
-- [ ] Alerts
+- [x] ~~Alerts~~
 - [ ] Frames
 - [ ] Nested Frames
 - [ ] Modal Dialogs
