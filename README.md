@@ -15,7 +15,7 @@
 ## Alerts, Frame & Windows
 - [x] ~~Browser Windows~~
 - [x] ~~Alerts~~
-- [ ] Frames
+- [x] ~~Frames~~
 - [ ] Nested Frames
 - [ ] Modal Dialogs
 ## Widgets
