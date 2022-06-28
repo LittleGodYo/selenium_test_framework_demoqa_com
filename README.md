@@ -19,7 +19,7 @@
 - [x] ~~Nested Frames~~
 - [x] ~~Modal Dialogs~~
 ## Widgets
-- [ ] Accordian
+- [x] ~~Accordian~~
 - [ ] Auto Complete
 - [ ] Date Picker
 - [ ] Slider
