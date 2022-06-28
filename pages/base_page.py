@@ -29,10 +29,12 @@ class BasePage:
 
     def is_visible(self, find_by: str, locator: str, locator_name: str = None) -> WebElement:
         self.go_to_element(self.is_present('css', locator))
-        return self.__wait.until(ec.visibility_of_element_located((self.__get_selenium_by(find_by), locator)), locator_name)
+        return self.__wait.until(ec.visibility_of_element_located((self.__get_selenium_by(find_by), locator)),
+                                 locator_name)
 
     def is_present(self, find_by: str, locator: str, locator_name: str = None) -> WebElement:
-        return self.__wait.until(ec.presence_of_element_located((self.__get_selenium_by(find_by), locator)), locator_name)
+        return self.__wait.until(ec.presence_of_element_located((self.__get_selenium_by(find_by), locator)),
+                                 locator_name)
 
     def is_not_present(self, find_by: str, locator: str, locator_name: str = None) -> WebElement:
         return self.__wait.until(ec.invisibility_of_element_located((self.__get_selenium_by(find_by), locator)),
@@ -71,3 +73,6 @@ class BasePage:
 
     def use_alert(self):
         return self.driver.switch_to.alert
+
+    def use_frame(self, frame):
+        return self.driver.switch_to.frame(frame)

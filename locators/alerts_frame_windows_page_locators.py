@@ -12,3 +12,9 @@ class AlertsPageLocators:
     BUTTON_PROMPT_ALERT = "button[id='promtButton']"
     CONFIRM_RESULT = "span[id='confirmResult'"
     PROMPT_RESULT = "span[id='promptResult'"
+
+
+class FramePageLocators:
+    FIRST_FRAME = "iframe[id='frame1']"
+    SECOND_FRAME = "iframe[id='frame2']"
+    TITLE_FRAME = "h1[id='sampleHeading']"
