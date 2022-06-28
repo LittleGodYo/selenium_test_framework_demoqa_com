@@ -16,7 +16,7 @@
 - [x] ~~Browser Windows~~
 - [x] ~~Alerts~~
 - [x] ~~Frames~~
-- [ ] Nested Frames
+- [x] ~~Nested Frames~~
 - [ ] Modal Dialogs
 ## Widgets
 - [ ] Accordian
