@@ -18,3 +18,10 @@ class FramePageLocators:
     FIRST_FRAME = "iframe[id='frame1']"
     SECOND_FRAME = "iframe[id='frame2']"
     TITLE_FRAME = "h1[id='sampleHeading']"
+
+
+class NestedFramesPageLocators:
+    PARENT_FRAME = "iframe[id='frame1']"
+    PARENT_TEXT = "body"
+    CHILD_FRAME = "iframe[srcdoc='<p>Child Iframe</p>']"
+    CHILD_TEXT = "p"

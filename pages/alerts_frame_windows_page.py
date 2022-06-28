@@ -2,7 +2,7 @@ import random
 import time
 
 from locators.alerts_frame_windows_page_locators import BrowserWindowsPageLocators, AlertsPageLocators, \
-    FramePageLocators
+    FramePageLocators, NestedFramesPageLocators
 from pages.base_page import BasePage
 
 
@@ -49,6 +49,7 @@ class AlertsPage(BasePage):
         text_result = self.is_present('css', self.locators.PROMPT_RESULT).text
         return text, text_result
 
+
 class FramePage(BasePage):
     locators = FramePageLocators()
 
@@ -68,3 +69,16 @@ class FramePage(BasePage):
             self.use_frame(frame)
             text = self.is_present('css', self.locators.TITLE_FRAME).text
             return [text, width, height]
+
+
+class NestedFramesPage(BasePage):
+    locators = NestedFramesPageLocators()
+
+    def check_nested_frame(self):
+        parent_frame = self.is_present('css', self.locators.PARENT_FRAME)
+        self.use_frame(parent_frame)
+        parent_text = self.is_present('css', self.locators.PARENT_TEXT).text
+        child_frame = self.is_present('css', self.locators.CHILD_FRAME)
+        self.use_frame(child_frame)
+        child_text = self.is_present('css', self.locators.CHILD_TEXT).text
+        return parent_text, child_text
