@@ -25,3 +25,10 @@ class NestedFramesPageLocators:
     PARENT_TEXT = "body"
     CHILD_FRAME = "iframe[srcdoc='<p>Child Iframe</p>']"
     CHILD_TEXT = "p"
+
+
+class ModalDialogsPageLocators:
+    BUTTON_SMALL_MODAL = "button[id='showSmallModal']"
+    BUTTON_LARGE_MODAL = "button[id='showLargeModal']"
+    BODY_TEXT_MODAL = "div[class='modal-body']"
+    TITLE_TEXT_MODAL = "div[class='modal-title h4']"
