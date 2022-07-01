@@ -28,3 +28,13 @@ class DatePickerPageLocators:
     TIME_AND_DATE_TIME_LIST = "li[class='react-datepicker__time-list-item ']"
     TIME_AND_DATE_MONTH_LIST = "div[class='react-datepicker__month-option']"
     TIME_AND_DATE_YEAR_LIST = "div[class='react-datepicker__year-option']"
+
+
+class SliderPageLocators:
+    INPUT_SLIDER = "input[class='range-slider range-slider--primary']"
+    SLIDER_VALUE = "input[id='sliderValue']"
+
+
+class ProgressBarPageLocators:
+    BUTTON_PROGRESS_BAR = "button[id='startStopButton']"
+    PROGRESS_BAR_VALUE = "div[class='progress-bar bg-info']"
