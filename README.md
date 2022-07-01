@@ -24,7 +24,7 @@
 - [x] ~~Date Picker~~
 - [x] ~~Slider~~
 - [x] ~~Progress Bar~~
-- [ ] Tabs
+- [x] ~~Tabs~~
 - [ ] Tool Tips
 - [ ] Menu
 - [ ] Select Menu
