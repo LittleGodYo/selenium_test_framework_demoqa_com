@@ -25,7 +25,7 @@
 - [x] ~~Slider~~
 - [x] ~~Progress Bar~~
 - [x] ~~Tabs~~
-- [ ] Tool Tips
+- [x] ~~Tool Tips~~
 - [ ] Menu
 - [ ] Select Menu
 ## Interactions
