@@ -7,7 +7,7 @@ from selenium.webdriver.support.select import Select
 
 from generator.generator import generated_color, generated_date
 from locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators, DatePickerPageLocators, \
-    ProgressBarPageLocators, SliderPageLocators, TabsPageLocators
+    ProgressBarPageLocators, SliderPageLocators, TabsPageLocators, ToolsTipsPageLocators
 from pages.base_page import BasePage
 
 
@@ -143,13 +143,13 @@ class TabsPage(BasePage):
 
     def check_tabs(self, tab_name):
         tab = {'what':
-                    {'title': self.locators.TABS_WHAT,
+                   {'title': self.locators.TABS_WHAT,
                     'content': self.locators.TABS_WHAT_CONTENT},
-                'origin':
-                    {'title': self.locators.TABS_ORIGIN,
+               'origin':
+                   {'title': self.locators.TABS_ORIGIN,
                     'content': self.locators.TABS_ORIGIN_CONTENT},
-                'use':
-                    {'title': self.locators.TABS_USE,
+               'use':
+                   {'title': self.locators.TABS_USE,
                     'content': self.locators.TABS_USE_CONTENT},
                'more':
                    {'title': self.locators.TABS_MORE,
@@ -159,3 +159,33 @@ class TabsPage(BasePage):
         tab_title.click()
         tab_content = self.is_visible('css', tab[tab_name]["content"]).text
         return tab_content
+
+
+class ToolsTipsPage(BasePage):
+    locators = ToolsTipsPageLocators()
+
+    def get_text_from_tool_tips(self, hover_name):
+        hover = {'button':
+                     {'hover': self.locators.BUTTON_HOVER_ME_TO_SEE,
+                      'wait': self.locators.TOOL_TIP_BUTTON,
+                      'by': 'css'},
+                 'field':
+                     {'hover': self.locators.FIELD_HOVER_ME_TO_SEE,
+                      'wait': self.locators.TOOL_TIP_FIELD,
+                      'by': 'css'},
+                 'contrary':
+                     {'hover': self.locators.CONTRARY_LINK,
+                      'wait': self.locators.TOOL_TIP_CONTRARY,
+                      'by': 'xpath'},
+                 'section':
+                     {'hover': self.locators.SECTION_LINK,
+                      'wait': self.locators.TOOL_TIP_SECTION,
+                      'by': 'xpath'},
+                 }
+        element = self.is_present(hover[hover_name]["by"], hover[hover_name]["hover"])
+        self.action_move_to_element(element)
+        self.is_visible('css', hover[hover_name]["wait"])
+        self.action_move_to_element(element)
+        tool_tip_text = self.is_present('css', self.locators.TOOL_TIPS_INNERS)
+        text = tool_tip_text.text
+        return text

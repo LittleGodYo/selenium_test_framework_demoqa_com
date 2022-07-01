@@ -49,3 +49,19 @@ class TabsPageLocators:
     TABS_USE_CONTENT = "div[id='demo-tabpane-use']"
     TABS_MORE = "a[id='demo-tab-more']"
     TABS_MORE_CONTENT = "div[id='demo-tabpane-more']"
+
+
+class ToolsTipsPageLocators:
+    BUTTON_HOVER_ME_TO_SEE = "button[id='toolTipButton']"
+    TOOL_TIP_BUTTON = "button[aria-describedby='buttonToolTip']"
+
+    FIELD_HOVER_ME_TO_SEE = "input[id='toolTipTextField']"
+    TOOL_TIP_FIELD = "input[aria-describedby='textFieldToolTip']"
+
+    CONTRARY_LINK = "//*[.='Contrary']"
+    TOOL_TIP_CONTRARY = "a[aria-describedby='contraryTexToolTip']"
+
+    SECTION_LINK = "//*[.='1.10.32']"
+    TOOL_TIP_SECTION = "a[aria-describedby='sectionToolTip']"
+
+    TOOL_TIPS_INNERS = "div[class='tooltip-inner']"
