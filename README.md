@@ -22,8 +22,8 @@
 - [x] ~~Accordian~~
 - [x] ~~Auto Complete~~
 - [x] ~~Date Picker~~
-- [ ] Slider
-- [ ] Progress Bar
+- [x] ~~Slider~~
+- [x] ~~Progress Bar~~
 - [ ] Tabs
 - [ ] Tool Tips
 - [ ] Menu
