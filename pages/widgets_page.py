@@ -2,9 +2,10 @@ import random
 
 from selenium.common import TimeoutException
 from selenium.webdriver import Keys
+from selenium.webdriver.support.select import Select
 
-from generator.generator import generated_color
-from locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators
+from generator.generator import generated_color, generated_date
+from locators.widgets_page_locators import AccordianPageLocators, AutoCompletePageLocators, DatePickerPageLocators
 from pages.base_page import BasePage
 
 
@@ -69,3 +70,44 @@ class AutoCompletePage(BasePage):
     def check_color_in_single(self):
         color = self.is_visible('css', self.locators.SINGLE_CONTAINER)
         return color.text.split()[3]
+
+
+class DatePickerPage(BasePage):
+    locators = DatePickerPageLocators()
+
+    def select_date(self):
+        date = next(generated_date())
+        input_date = self.is_visible('css', self.locators.DATE_INPUT)
+        value_date_before = input_date.get_attribute('value')
+        input_date.click()
+        self.set_date_by_text(self.locators.DATE_SELECT_MONTH, date.month)
+        self.set_date_by_text(self.locators.DATE_SELECT_YEAR, date.year)
+        self.set_date_item_from_list(self.locators.DATE_SELECT_DAY_LIST, date.day)
+        value_date_after = input_date.get_attribute('value')
+        return value_date_before, value_date_after
+
+    def select_date_and_time(self):
+        date = next(generated_date())
+        input_date = self.is_visible('css', self.locators.TIME_AND_DATE_INPUT)
+        value_date_before = input_date.get_attribute('value')
+        input_date.click()
+        self.is_visible('css', self.locators.TIME_AND_DATE_MONTH).click()
+        self.set_date_item_from_list(self.locators.TIME_AND_DATE_MONTH_LIST, date.month)
+        self.is_visible('css', self.locators.TIME_AND_DATE_YEAR).click()
+        self.set_date_item_from_list(self.locators.TIME_AND_DATE_YEAR_LIST, '2020')
+        self.set_date_item_from_list(self.locators.DATE_SELECT_DAY_LIST, date.day)
+        self.set_date_item_from_list(self.locators.TIME_AND_DATE_TIME_LIST, date.time)
+        input_date_after = self.is_visible('css', self.locators.TIME_AND_DATE_INPUT)
+        value_date_after = input_date_after.get_attribute('value')
+        return value_date_before, value_date_after
+
+    def set_date_by_text(self, element, value):
+        select = Select(self.is_present('css', element))
+        select.select_by_visible_text(value)
+
+    def set_date_item_from_list(self, elements, value):
+        item_list = self.are_present('css', elements)
+        for item in item_list:
+            if item.text == value:
+                item.click()
+                break
