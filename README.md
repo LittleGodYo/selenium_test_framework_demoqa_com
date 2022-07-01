@@ -21,7 +21,7 @@
 ## Widgets
 - [x] ~~Accordian~~
 - [x] ~~Auto Complete~~
-- [ ] Date Picker
+- [x] ~~Date Picker~~
 - [ ] Slider
 - [ ] Progress Bar
 - [ ] Tabs
