@@ -30,7 +30,7 @@
 - [ ] Select Menu
 ## Interactions
 - [x] ~~Sortable~~
-- [ ] Selectable
+- [x] ~~Selectable~~
 - [ ] Resizable
 - [ ] Droppable
 - [ ] Dragabble
