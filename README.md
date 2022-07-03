@@ -29,7 +29,7 @@
 - [x] ~~Menu~~
 - [ ] Select Menu
 ## Interactions
-- [ ] Sortable
+- [x] ~~Sortable~~
 - [ ] Selectable
 - [ ] Resizable
 - [ ] Droppable
