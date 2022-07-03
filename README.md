@@ -26,7 +26,7 @@
 - [x] ~~Progress Bar~~
 - [x] ~~Tabs~~
 - [x] ~~Tool Tips~~
-- [ ] Menu
+- [x] ~~Menu~~
 - [ ] Select Menu
 ## Interactions
 - [ ] Sortable
