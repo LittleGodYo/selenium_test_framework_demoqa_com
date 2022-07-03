@@ -65,3 +65,7 @@ class ToolsTipsPageLocators:
     TOOL_TIP_SECTION = "a[aria-describedby='sectionToolTip']"
 
     TOOL_TIPS_INNERS = "div[class='tooltip-inner']"
+
+
+class MenuPageLocators:
+    MENU_ITEMS_LIST = "ul[id='nav'] li a"
