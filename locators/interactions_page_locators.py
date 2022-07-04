@@ -12,3 +12,10 @@ class SelectablePageLocators:
     TAB_GRID = "a[id='demo-tab-grid']"
     GRID_ITEM = "li[class='list-group-item list-group-item-action']"
     GRID_ITEM_ACTIVE = "li[class='list-group-item active list-group-item-action']"
+
+
+class ResizablePageLocators:
+    RESIZABLE_BOX_HANDLE = "div[class='constraint-area'] span[class='react-resizable-handle react-resizable-handle-se']"
+    RESIZABLE_BOX = "div[id='resizableBoxWithRestriction']"
+    RESIZABLE_HANDLE = "div[id='resizable'] span[class='react-resizable-handle react-resizable-handle-se']"
+    RESIZABLE = "div[id='resizable']"
