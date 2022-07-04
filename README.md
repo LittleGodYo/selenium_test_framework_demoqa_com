@@ -32,7 +32,7 @@
 - [x] ~~Sortable~~
 - [x] ~~Selectable~~
 - [x] ~~Resizable~~
-- [ ] Droppable
+- [x] ~~Droppable~~
 - [ ] Dragabble
 ## Book Store Application
 - [ ] Login
