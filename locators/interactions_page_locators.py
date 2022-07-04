@@ -19,3 +19,30 @@ class ResizablePageLocators:
     RESIZABLE_BOX = "div[id='resizableBoxWithRestriction']"
     RESIZABLE_HANDLE = "div[id='resizable'] span[class='react-resizable-handle react-resizable-handle-se']"
     RESIZABLE = "div[id='resizable']"
+
+
+class DroppablePageLocators:
+    # Simple
+    SIMPLE_TAB = "a[id='droppableExample-tab-simple']"
+    DRAG_ME_SIMPLE = "div[id='draggable']"
+    DROP_HERE_SIMPLE = "#simpleDropContainer #droppable"
+
+    # Accept
+    ACCEPT_TAB = "a[id='droppableExample-tab-accept']"
+    ACCEPTABLE = "div[id='acceptable']"
+    NOT_ACCEPTABLE = "div[id='notAcceptable']"
+    DROP_HERE_ACCEPT = "#acceptDropContainer #droppable"
+
+    # Prevent Propogation
+    PREVENT_TAB = "a[id='droppableExample-tab-preventPropogation']"
+    NOT_GREEDY_DROP_BOX_TEXT = "div[id='notGreedyDropBox'] p:nth-child(1)"
+    NOT_GREEDY_INNER_BOX = "div[id='notGreedyInnerDropBox']"
+    GREEDY_DROP_BOX_TEXT = "div[id='greedyDropBox'] p:nth-child(1)"
+    GREEDY_INNER_BOX = "div[id='greedyDropBoxInner']"
+    DRAG_ME_PREVENT = "#ppDropContainer #dragBox"
+
+    # Revert Draggable
+    REVERT_TAB = "a[id='droppableExample-tab-revertable']"
+    WILL_REVERT = "div[id='revertable']"
+    NOT_REVERT = "div[id='notRevertable']"
+    DROP_HERE_REVERT = "#revertableDropContainer #droppable"
