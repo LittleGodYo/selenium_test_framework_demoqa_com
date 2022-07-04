@@ -31,7 +31,7 @@
 ## Interactions
 - [x] ~~Sortable~~
 - [x] ~~Selectable~~
-- [ ] Resizable
+- [x] ~~Resizable~~
 - [ ] Droppable
 - [ ] Dragabble
 ## Book Store Application
