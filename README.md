@@ -30,8 +30,8 @@
 - [ ] Select Menu
 ## Interactions
 - [x] ~~Sortable~~
-- [ ] Selectable
-- [ ] Resizable
+- [x] ~~Selectable~~
+- [x] ~~Resizable~~
 - [ ] Droppable
 - [ ] Dragabble
 ## Book Store Application
