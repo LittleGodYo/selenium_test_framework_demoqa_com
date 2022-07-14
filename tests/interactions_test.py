@@ -1,4 +1,4 @@
-from pages.interactions_page import SortablePage, SelectablePage, ResizablePage, DroppablePage
+from pages.interactions_page import SortablePage, SelectablePage, ResizablePage, DroppablePage, DraggablePage
 
 
 class TestInteractions:
@@ -60,5 +60,27 @@ class TestInteractions:
             not_will_after_move, not_will_after_revert = droppable.drop_revert_draggable('not_will')
             assert will_after_move != will_after_revert, 'The elements have not reverted'
             assert not_will_after_move == not_will_after_revert, 'The elements have reverted'
+
+    class TestDraggablePage:
+        def test_simple_draggable(self, driver):
+            draggable = DraggablePage(driver, 'https://demoqa.com/dragabble')
+            draggable.open()
+            before_position, after_position = draggable.simple_drag_box()
+            assert before_position != after_position, "The position of the box has not been changed"
+
+        def test_axis_restricted_draggable(self, driver):
+            draggable = DraggablePage(driver, 'https://demoqa.com/dragabble')
+            draggable.open()
+            top_x_before, top_x_after, left_x_before, left_x_after = draggable.axis_restricted_drag_box('x')
+            top_y_before, top_y_after, left_y_before, left_y_after = draggable.axis_restricted_drag_box('y')
+            assert top_x_before == top_x_after and int(top_x_after[0]) == 0, "Box position has not been changed or " \
+                                                                             "there has been a shift in the y-axis "
+            assert left_x_before != left_x_after and int(left_x_after[0]) != 0, "Box position has not been changed or " \
+                                                                                "there has been a shift in the y-axis "
+            assert top_y_before != top_y_after and int(top_y_after[0]) != 0, "Box position has not been changed or " \
+                                                                             "there has been a shift in the x-axis "
+            assert left_y_before == left_y_after and int(left_y_after[0]) == 0, "Box position has not been changed or " \
+                                                                                "there has been a shift in the x-axis "
+
 
 

@@ -1,8 +1,9 @@
 import random
+import re
 import time
 
 from locators.interactions_page_locators import SortablePageLocators, SelectablePageLocators, ResizablePageLocators, \
-    DroppablePageLocators
+    DroppablePageLocators, DraggablePageLocators
 from pages.base_page import BasePage
 
 
@@ -132,3 +133,41 @@ class DroppablePage(BasePage):
         time.sleep(1)
         position_after_revert = revert.get_attribute('style')
         return position_after_move, position_after_revert
+
+
+class DraggablePage(BasePage):
+    locators = DraggablePageLocators()
+
+    def get_before_and_after_position(self, drag_element):
+        self.action_drag_and_drop_by_offset(drag_element, random.randint(0, 50), random.randint(0, 50))
+        before_position = drag_element.get_attribute('style')
+        self.action_drag_and_drop_by_offset(drag_element, random.randint(0, 50), random.randint(0, 50))
+        after_position = drag_element.get_attribute('style')
+        return before_position, after_position
+
+    def simple_drag_box(self):
+        self.is_visible('css', self.locators.SIMPLE_TAB).click()
+        drag_div = self.is_visible('css', self.locators.DRAG_ME)
+        before_position, after_position = self.get_before_and_after_position(drag_div)
+        return before_position, after_position
+
+    def get_top_position(self, position):
+        return re.findall(r'\d[0-9]|\d', position.split(';')[2])
+
+    def get_left_position(self, position):
+        return re.findall(r'\d[0-9]|\d', position.split(';')[1])
+
+    def axis_restricted_drag_box(self, type_drag):
+        drag = {'x':
+                    {'only': self.locators.ONLY_X},
+                'y':
+                    {'only': self.locators.ONLY_Y},
+                }
+        self.is_visible('css', self.locators.AXIS_TAB).click()
+        only = self.is_visible('css', drag[type_drag]['only'])
+        position = self.get_before_and_after_position(only)
+        top_before = self.get_top_position(position[0])
+        top_after = self.get_top_position(position[1])
+        left_before = self.get_left_position(position[0])
+        left_after = self.get_left_position(position[1])
+        return top_before, top_after, left_before, left_after

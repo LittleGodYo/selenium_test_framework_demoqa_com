@@ -46,3 +46,14 @@ class DroppablePageLocators:
     WILL_REVERT = "div[id='revertable']"
     NOT_REVERT = "div[id='notRevertable']"
     DROP_HERE_REVERT = "#revertableDropContainer #droppable"
+
+
+class DraggablePageLocators:
+    #Simple
+    SIMPLE_TAB = "a[id='draggableExample-tab-simple']"
+    DRAG_ME = "div[id='draggableExample-tabpane-simple'] div[id='dragBox']"
+
+    #Axis Restricted
+    AXIS_TAB = "a[id='draggableExample-tab-axisRestriction']"
+    ONLY_X = "div[id='restrictedX']"
+    ONLY_Y = "div[id='restrictedY']"
