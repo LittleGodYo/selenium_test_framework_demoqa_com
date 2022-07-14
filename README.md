@@ -7,7 +7,6 @@
 - [x] ~~Web Tables~~
 - [x] ~~Buttons~~
 - [x] ~~Links~~
-- [ ] Broken Links - Images
 - [x] ~~Upload and Download~~
 - [x] ~~Dynamic Properties~~
 ## Forms
@@ -27,15 +26,9 @@
 - [x] ~~Tabs~~
 - [x] ~~Tool Tips~~
 - [x] ~~Menu~~
-- [ ] Select Menu
 ## Interactions
 - [x] ~~Sortable~~
 - [x] ~~Selectable~~
 - [x] ~~Resizable~~
 - [x] ~~Droppable~~
-- [ ] Dragabble
-## Book Store Application
-- [ ] Login
-- [ ] Book Store
-- [ ] Profile
-- [ ] Book Store API
+- [x] ~~Dragabble~~
