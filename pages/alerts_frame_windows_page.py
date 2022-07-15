@@ -1,6 +1,8 @@
 import random
 import time
 
+import allure
+
 from locators.alerts_frame_windows_page_locators import BrowserWindowsPageLocators, AlertsPageLocators, \
     FramePageLocators, NestedFramesPageLocators, ModalDialogsPageLocators
 from pages.base_page import BasePage
@@ -9,6 +11,7 @@ from pages.base_page import BasePage
 class BrowserWindowsPage(BasePage):
     locators = BrowserWindowsPageLocators()
 
+    @allure.step('Check opened new tab or window')
     def check_opened_new_tab_or_window(self, new):
         if new == 'new-tab':
             self.is_visible('css', self.locators.BUTTON_NEW_TAB).click()
@@ -22,17 +25,20 @@ class BrowserWindowsPage(BasePage):
 class AlertsPage(BasePage):
     locators = AlertsPageLocators()
 
+    @allure.step('get text from alert')
     def check_see_alert(self):
         self.is_visible('css', self.locators.BUTTON_SEE_ALERT).click()
         alert_window = self.use_alert()
         return alert_window.text
 
+    @allure.step('check alert appear after 5 sec')
     def check_appear_5_sec(self):
         self.is_visible('css', self.locators.BUTTON_APPEAR_ALERT_AFTER_5_SEC).click()
         time.sleep(5)
         alert_window = self.use_alert()
         return alert_window.text
 
+    @allure.step('check confirm alert')
     def check_confirm_alert(self):
         self.is_visible('css', self.locators.BUTTON_CONFIRM_ALERT).click()
         alert_window = self.use_alert()
@@ -40,6 +46,7 @@ class AlertsPage(BasePage):
         text_result = self.is_present('css', self.locators.CONFIRM_RESULT).text
         return text_result
 
+    @allure.step('check prompt alert')
     def check_prompt_alert(self):
         text = f'autotest{random.randint(1, 100)}'
         self.is_visible('css', self.locators.BUTTON_PROMPT_ALERT).click()
@@ -53,6 +60,7 @@ class AlertsPage(BasePage):
 class FramePage(BasePage):
     locators = FramePageLocators()
 
+    @allure.step('check frame')
     def check_frame(self, frame_num):
         if frame_num == 'frame1':
             frame = self.is_present('css', self.locators.FIRST_FRAME)
@@ -74,6 +82,7 @@ class FramePage(BasePage):
 class NestedFramesPage(BasePage):
     locators = NestedFramesPageLocators()
 
+    @allure.step('check nested frame')
     def check_nested_frame(self):
         parent_frame = self.is_present('css', self.locators.PARENT_FRAME)
         self.use_frame(parent_frame)
@@ -87,6 +96,7 @@ class NestedFramesPage(BasePage):
 class ModalDialogsPage(BasePage):
     locators = ModalDialogsPageLocators()
 
+    @allure.step('check modal dialogs')
     def check_modal_dialogs(self, modal_name):
         if modal_name == 'small':
             self.is_visible('css', self.locators.BUTTON_SMALL_MODAL).click()

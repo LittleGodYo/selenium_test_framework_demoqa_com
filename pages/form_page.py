@@ -1,5 +1,6 @@
 import os
 
+import allure
 from selenium.webdriver import Keys
 
 from generator.generator import generated_person, generated_file
@@ -10,6 +11,7 @@ from pages.base_page import BasePage
 class FormPage(BasePage):
     locators = FormPageLocators()
 
+    @allure.step('Fill in all fields')
     def fill_form_fields(self):
         person = next(generated_person())
         file_name, path = generated_file()
@@ -31,6 +33,7 @@ class FormPage(BasePage):
         self.is_visible('css', self.locators.SUBMIT).send_keys(Keys.RETURN)
         return person
 
+    @allure.step('Get form result')
     def form_result(self):
         result_list = self.are_present('xpath', self.locators.RESULT_TABLE)
         data = []
